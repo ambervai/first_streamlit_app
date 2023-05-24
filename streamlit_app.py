@@ -53,9 +53,16 @@ my_data_row = my_cur.fetchone()
 streamlit.text("The fruit load list contains:")
 streamlit.text(my_data_row)
 
-my_data_row = my_cur.fetchone()
+#get one row
+#my_data_row = my_cur.fetchone()
+#streamlit.header("The fruit load list contains:")
+#streamlit.dataframe(my_data_row)
+
+#get all rows
+my_cur.execute("select * from fruit_load_list")
+my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
-streamlit.dataframe(my_data_row)
+streamlit.dataframe(my_data_rows)
 
 
 
